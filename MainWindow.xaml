@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1366">
-    <Grid>
-        
+        Title="MainWindow" Height="720" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Loaded="Window_Loaded">
+    <Grid Background="#FAEEDD">
+        <Label Content="История операций банка" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Tahoma"/>
+        <Label Content="Наименование процесса" HorizontalAlignment="Left" Margin="28,139,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="14"  Width="404" HorizontalContentAlignment="Center"/>
+        <ComboBox Name="process_name_cb" HorizontalAlignment="Left" Margin="28,166,0,0" VerticalAlignment="Top"  Width="404"/>
+
+        <Label Content="Категория процесса" HorizontalAlignment="Left" Margin="439,139,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="14"  Width="310" HorizontalContentAlignment="Center"/>
+        <ComboBox Name="category_name_cb" HorizontalAlignment="Left" Margin="437,166,0,0" VerticalAlignment="Top"  Width="314"/>
+
+        <Label Content="Подразделение-владелец" HorizontalAlignment="Left" Margin="756,139,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="14"  Width="243" HorizontalContentAlignment="Center"/>
+        <ComboBox Name="owning_division_cb" HorizontalAlignment="Left" Margin="756,166,0,0" VerticalAlignment="Top"  Width="243"/>
+
+        <DataGrid x:Name="process_log_dg" Margin="25,262,25,117" FontFamily="Tahoma" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Resources>
+                <Style TargetType="TextBlock" x:Key="WrapText">
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код процесса" Binding="{Binding Path=id_process}" Width="100" ElementStyle="{StaticResource WrapText}"/>
+                <DataGridTextColumn Header="Наименование процесса" Binding="{Binding Path=process_name}" Width="320" ElementStyle="{StaticResource WrapText}"/>
+                <DataGridTextColumn Header="Категория процесса" Binding="{Binding Path=category_name}" Width="300" ElementStyle="{StaticResource WrapText}"/>
+                <DataGridTextColumn Header="Подразделение-владелец процесса" Binding="{Binding Path=owning_division_name}" Width="250" ElementStyle="{StaticResource WrapText}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="reset" Content="Сбросить" HorizontalAlignment="Left" Height="30" Margin="213,213,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="reset_Click" />
+        <Button Name="search" Content="Найти" HorizontalAlignment="Left" Height="30" Margin="574,213,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="search_Click" />
+        <Button Name="exit" Content="Выйти" HorizontalAlignment="Left" Height="60" Margin="25,606,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="exit_Click"/>
+        <Button Name="add" Content="Загрузить таблицу" HorizontalAlignment="Left" Height="60" Margin="747,606,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18"/>
     </Grid>
 </Window>
