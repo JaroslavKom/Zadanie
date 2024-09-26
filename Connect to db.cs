@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace WpfApp1
 {
+    //Классы для подключения к базе данных
     internal class Connect_to_db
     {
         public static MySqlConnection GetDBConnection(string host, string port, string database, string username, string password)
@@ -31,6 +32,7 @@ namespace WpfApp1
             return Connect_to_db.GetDBConnection(host, port, database, username, password);
         }
     }
+    //Класс для чтения ini файла с конфигурацией подключения к базе данных
     public class INIManager
     {
         private const int SIZE = 1024;

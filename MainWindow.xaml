@@ -33,6 +33,6 @@
         <Button Name="reset" Content="Сбросить" HorizontalAlignment="Left" Height="30" Margin="213,213,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="reset_Click" />
         <Button Name="search" Content="Найти" HorizontalAlignment="Left" Height="30" Margin="574,213,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="search_Click" />
         <Button Name="exit" Content="Выйти" HorizontalAlignment="Left" Height="60" Margin="25,606,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="exit_Click"/>
-        <Button Name="add" Content="Загрузить таблицу" HorizontalAlignment="Left" Height="60" Margin="747,606,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18"/>
+        <Button Name="add" Content="Загрузить таблицу" HorizontalAlignment="Left" Height="60" Margin="747,606,0,0" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="18" Click="add_Click"/>
     </Grid>
 </Window>
